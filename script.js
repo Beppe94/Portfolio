@@ -9,11 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    const name = document.querySelectorAll("p");
+    const name = document.querySelector(".about-me").childNodes;
 
     name.forEach((letter, i) => {
-        setTimeout(() => {
-            letter.style.left = '0px';
-        }, 700 * (i + 1));
+        if(letter instanceof HTMLElement) {
+
+            setTimeout(() => {
+                letter.style.left = '0px';
+            }, 500 * (i + 1));
+        }
     })
 })
