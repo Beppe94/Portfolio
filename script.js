@@ -8,15 +8,41 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
+/*
 document.addEventListener('DOMContentLoaded', function() {
-    const name = document.querySelector(".about-me").childNodes;
+    const aboutDiv = document.querySelectorAll(".about-me p");
 
-    name.forEach((letter, i) => {
-        if(letter instanceof HTMLElement) {
+    
+    aboutDiv.forEach((letter, i) => {
+        if(letter instanceof HTMLElement ) {
 
             setTimeout(() => {
-                letter.style.left = '0px';
+                letter.style.right = '0px';
             }, 500 * (i + 1));
         }
     })
 })
+*/
+
+function makeStars() {
+    const numStars = 100;
+    const container = document.querySelector('.background');
+
+    for(let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        container.appendChild(star);
+
+        if(Math.random() < .5) {
+            star.classList.add('star-glow');
+        }
+
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;     
+        
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+    }
+}
+
+makeStars()
