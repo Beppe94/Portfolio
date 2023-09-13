@@ -226,10 +226,10 @@ a {
 }
 
 .container {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 
 .about-me {
@@ -242,17 +242,24 @@ a {
 }
 
 .about-me h1 {
+    animation: 2s fadeUp;
+}
+
+.border {
+    animation: toRight 1.5s linear forwards;
+    border-top: 2px solid #fefefe;
     margin-bottom: 15px;
 }
 
-
-@keyframes to_right {
-    0% { width: 0;}
-    100% { width: 100%; }
+@keyframes fadeUp {
+    0% {opacity: 0; transform: translate3d(0, 100%, 0);}
+    70% { opacity: 0;transform: translate3d(0, 80%, 0); }
+    100% {opacity: 1; transform: translate3d(0, 0, 0);}
 }
 
-.about-me h1 {
-    margin-bottom: 10px;
+@keyframes toRight {
+    0% { width: 0;}
+    100% { width: 100%;}
 }
 
 .about-me p:nth-child(4) {
@@ -296,8 +303,22 @@ a {
 }
 
 .about-me-image img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
     border-radius: 10px;
 }
 
+.container-skills {
+    background-image: none;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.skills img {
+    width: 200px;
+    height: auto;
+}

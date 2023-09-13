@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 function makeStars() {
-    const numStars = 100;
+    const numStars = 150;
     const container = document.querySelector('.background');
 
     for(let i = 0; i < numStars; i++) {
@@ -38,7 +38,7 @@ function makeStars() {
         }
 
         const x = Math.random() * 100;
-        const y = Math.random() * 100;     
+        const y = Math.random() * 95;     
         
         star.style.left = `${x}%`;
         star.style.top = `${y}%`;
