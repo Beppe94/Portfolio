@@ -61,6 +61,11 @@ a {
     }
 }
 
+.home-container {
+    display: flex;
+    top: 0;
+}
+
 .star {
     position: absolute;
     width: 2px;
@@ -86,7 +91,7 @@ a {
     justify-content: center;
     align-content: center;
     position: absolute;
-    top: 30px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -221,7 +226,7 @@ a {
 }
 
 .about-container {
-    margin-top: 590px;
+    margin-top: 690px;
     background-color: #3a1f7a;
 }
 
@@ -308,17 +313,35 @@ a {
     border-radius: 10px;
 }
 
-.container-skills {
-    background-image: none;
+
+.carousel-wrap {
+   overflow: hidden;
+   display: flex;
+   justify-content: center;
 }
 
-.skills {
+.carousel {
+    width: 80%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    animation: transform 20s linear infinite;
+
 }
 
-.skills img {
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel img {
     width: 200px;
     height: auto;
+}
+
+@keyframes transform {
+    0% { transform:translateX(0%) }
+    100% { transform: translateX(-360%); }
+
 }

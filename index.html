@@ -16,8 +16,8 @@
             <li><a href="#contact">Contact</a></li>
         </ol>
     </nav>
-    <section class="home" id="home">
-        <div class="home-container">
+    <section class="home-container" id="home">
+        <div>
             <div class="background">
                 <div class="sun"></div>
                 <div class="mercury-orbit">
@@ -36,6 +36,7 @@
             </div>
         </div>
     </section>
+
     <section class="about-container" id="about">
         <div class="container">
             <div class="about-me">
@@ -53,15 +54,37 @@
             </div>
         </div>
         <div class="container-skills">
-            <h1>Skills</h1>
-            <div class="skills">
-                <img src="Images/js.png" alt="Javascript Logo">
-                <img src="Images/html5.webp" alt="HTML5 Logo">
-                <img src="Images/css.svg" alt="CSS Logo">
-                <img src="Images/npm.png" alt="Node Package Manager Logo">
-                <img src="Images/webpack.png" alt="Webpack Logo">
-                <img src="Images/python.png" alt="Python3 Logo">
-                <img src="Images/linux.png" alt="Linux os Logo">
+            <div>
+                <h1>Skills</h1>
+            </div>
+            <div class="carousel-wrap">
+
+                <div class="carousel">
+                    <div class="slide" id="item-1">
+                        <img src="Images/js.png" alt="Javascript Logo">
+                    </div>
+                    <div class="slide" id="item-2">
+                        <img src="Images/html5.webp" alt="HTML5 Logo">
+                    </div>
+                    <div class="slide" id="item-3">
+                        <img src="Images/css.svg" alt="CSS Logo">
+                    </div>
+                    <div class="slide" id="item-4">
+                        <img src="Images/npm.png" alt="Node Package Manager Logo">
+                    </div>
+                    <div class="slide" id="item-5">
+                        <img src="Images/webpack.png" alt="Webpack Logo">
+                    </div>
+                    <div class="slide" id="item-6">
+                        <img src="Images/python.png" alt="Python3 Logo">
+                    </div>
+                    <div class="slide" id="item-7">
+                        <img src="Images/linux.png" alt="Linux os Logo">
+                    </div>
+                    <button id="prev">prev</button>
+                    <button id="next">next</button>
+                </div>
+
             </div>
         </div>
     </section>
