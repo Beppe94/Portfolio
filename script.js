@@ -52,3 +52,24 @@ function randomStar() {
 
 randomStar()
 
+function switchToIcons(screenSize) {
+    const list = document.querySelectorAll('li a');
+    if(screenSize.matches) {
+        const homeImg = document.createElement('img');
+        homeImg.src = 'Images/home.svg';
+        homeImg.setAttribute('width', '50');
+        homeImg.setAttribute('height', '50');
+        const link = document.createElement('a');
+        link.href = '#home'
+
+        list[0].parentNode.appendChild(link);
+        link.appendChild(homeImg);
+        list[0].parentNode.removeChild(list[0]);
+    } else {
+        list[0].textContent = 'Home';
+    }
+}
+
+let size = window.matchMedia('(max-width: 430px');
+
+size.addListener(switchToIcons)
