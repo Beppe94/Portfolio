@@ -52,9 +52,9 @@ function randomStar() {
 
 randomStar()
 
-function switchToIcons(screenSize) {
+function switchHome(screenSize) {
     const list = document.querySelectorAll('li a');
-    if(screenSize.matches) {
+    if(window.innerWidth <= 460) {
         const homeImg = document.createElement('img');
         homeImg.src = 'Images/home.svg';
         homeImg.setAttribute('width', '50');
@@ -70,6 +70,62 @@ function switchToIcons(screenSize) {
     }
 }
 
-let size = window.matchMedia('(max-width: 430px');
+function switchAbout(screenSize) {
+    const list = document.querySelectorAll('li a');
+    if(window.innerWidth <= 460) {
+        const homeImg = document.createElement('img');
+        homeImg.src = 'Images/about.svg';
+        homeImg.setAttribute('width', '50');
+        homeImg.setAttribute('height', '50');
+        const link = document.createElement('a');
+        link.href = '#about'
 
-size.addListener(switchToIcons)
+        list[1].parentNode.appendChild(link);
+        link.appendChild(homeImg);
+        list[1].parentNode.removeChild(list[1]);
+    } else {
+        list[1].textContent = 'About';
+    }
+}
+
+function switchProject(screenSize) {
+    const list = document.querySelectorAll('li a');
+    if(window.innerWidth <= 460) {
+        const homeImg = document.createElement('img');
+        homeImg.src = 'Images/projects.svg';
+        homeImg.setAttribute('width', '50');
+        homeImg.setAttribute('height', '50');
+        const link = document.createElement('a');
+        link.href = '#projects'
+
+        list[2].parentNode.appendChild(link);
+        link.appendChild(homeImg);
+        list[2].parentNode.removeChild(list[2]);
+    } else {
+        list[2].textContent = 'Projects';
+    }
+}
+
+function switchContact(screenSize) {
+    const list = document.querySelectorAll('li a');
+    if(window.innerWidth <= 460) {
+        const homeImg = document.createElement('img');
+        homeImg.src = 'Images/contact.svg';
+        homeImg.setAttribute('width', '50');
+        homeImg.setAttribute('height', '50');
+        const link = document.createElement('a');
+        link.href = '#contact'
+
+        list[3].parentNode.appendChild(link);
+        link.appendChild(homeImg);
+        list[3].parentNode.removeChild(list[3]);
+    } else {
+        list[3].textContent = 'Contact';
+    }
+}
+
+
+window.addEventListener('resize', switchHome)
+window.addEventListener('resize', switchAbout)
+window.addEventListener('resize', switchProject)
+window.addEventListener('resize', switchContact)
