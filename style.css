@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(140deg, #4d4646, rgb(32, 30, 30), #494545);
+    background-image: linear-gradient(140deg, #443f3f, rgb(32, 30, 30), #3b3838);
     color: white;
     background-position: center center; 
     background-repeat: no-repeat;
@@ -37,6 +37,7 @@ a {
     z-index: 999;
     font-size: 24px;
     margin: 10px;
+    pointer-events: none;
 }
 
 .nav-bar ol {
@@ -45,6 +46,7 @@ a {
     margin: 1rem;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
+    pointer-events: all;
 }
 
 .nav-bar ol li {
@@ -350,7 +352,7 @@ a {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    box-shadow: inset 0 0 50px 15px rgb(170, 158, 158);
+    box-shadow: inset 0 0 40px 15px rgb(170, 158, 158);
     border: 1px solid #fefefe;
     background-color: #332f2f;
     border-radius: 20px;
@@ -394,6 +396,111 @@ a {
     height: auto;
 }
 
+.projects {
+    min-height: auto;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 140px;
+}
+
+.checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    right: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.burger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.burger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #228fc2;
+}
+
+.burger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform .4s ease-in-out;
+}
+
+.burger-lines .line2 {
+    transition: transform .2s ease-in-out;
+}
+
+.burger-lines .line1 {
+    transform-origin: 0% 100%;
+    transition: transform .4s ease-in-out;
+}
+
+.explanation {
+    background-color: #0e0c0c;
+    opacity: 0;
+    border-radius: 0 0 20px 20px;
+    width: 607px;
+    height: 426px;
+    position: absolute;
+    left: 0;
+    top: 63px;
+    transform: translateY(-50%);
+    transition: transform .3s ease-in;
+}
+
+.project-card {
+    border: 2px solid #fefefe;
+    width: 610px;
+    height: 490px;
+    transform: skewY(10deg) rotateY(20deg);
+    transition: all .5s ease-in;
+    box-shadow: 15px -10px 40px rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.project-card a img {
+    width: 40px;
+    height: auto;
+}
+
+.project-card:hover {
+    transform: skewY(0deg) rotateY(0deg);
+}
+
+.project-card:hover:nth-child(1) {
+    box-shadow: 0 0 40px rgba(154, 51, 202, 1);
+}
+
+.project-card:nth-child(1) {
+    background-image: url(Images/Previews/myWeatherPreview.gif);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 @keyframes transform {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(8 * 150px * -1)); }
@@ -433,3 +540,7 @@ a {
     }
 }
 
+.project-card input[type="checkbox"]:checked ~ .explanation {
+    transform: translateY(0);
+    opacity: .7;
+}
