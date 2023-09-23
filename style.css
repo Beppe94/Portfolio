@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&display=swap');
+
 *,
 ::before,
 ::after {
@@ -8,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-family: poppins;
 }
 
 body {
@@ -38,11 +41,12 @@ a {
     font-size: 24px;
     margin: 10px;
     pointer-events: none;
+    font-weight: 700;
 }
 
 .nav-bar ol {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     margin: 1rem;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
@@ -55,7 +59,7 @@ a {
     color: white;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 500px) {
     .nav-bar {
         display: flex;
         justify-content: center;
@@ -216,30 +220,30 @@ a {
 @media screen and (max-width: 530px){
    
     .mercury-orbit {
-        width: 110px;
-        height: 110px;
+        width: 130px;
+        height: 130px;
     }
 
     .mercury {
-        transform: translate(75px);
+        transform: translate(85px);
     }
 
     .venus-orbit {
-        width: 170px;
-        height: 170px;
+        width: 200px;
+        height: 200px;
     }
 
     .venus {
-        transform: translate(115px);
+        transform: translate(135px);
     }
 
     .earth-orbit {
-        width: 220px;
-        height: 220px;
+        width: 280px;
+        height: 280px;
     }
 
     .earth {
-        transform: translate(155px);
+        transform: translate(185px);
     }
 }
 
@@ -269,6 +273,7 @@ a {
     display: flex;
     flex-direction: column;
     font-size: 24px;
+    font-weight: 600;
 }
 
 .about-me h1 {
@@ -585,3 +590,4 @@ a {
     transform: translateY(0);
     opacity: .8;
 }
+

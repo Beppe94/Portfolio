@@ -54,7 +54,7 @@ randomStar()
 
 function switchHome(screenSize) {
     const list = document.querySelectorAll('li a');
-    if(window.innerWidth <= 460) {
+    if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
         homeImg.src = 'Images/home.svg';
         homeImg.setAttribute('width', '50');
@@ -72,7 +72,7 @@ function switchHome(screenSize) {
 
 function switchAbout(screenSize) {
     const list = document.querySelectorAll('li a');
-    if(window.innerWidth <= 460) {
+    if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
         homeImg.src = 'Images/about.svg';
         homeImg.setAttribute('width', '50');
@@ -90,7 +90,7 @@ function switchAbout(screenSize) {
 
 function switchProject(screenSize) {
     const list = document.querySelectorAll('li a');
-    if(window.innerWidth <= 460) {
+    if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
         homeImg.src = 'Images/projects.svg';
         homeImg.setAttribute('width', '50');
@@ -108,7 +108,7 @@ function switchProject(screenSize) {
 
 function switchContact(screenSize) {
     const list = document.querySelectorAll('li a');
-    if(window.innerWidth <= 460) {
+    if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
         homeImg.src = 'Images/contact.svg';
         homeImg.setAttribute('width', '50');
