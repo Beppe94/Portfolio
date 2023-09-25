@@ -129,3 +129,30 @@ window.addEventListener('resize', switchHome)
 window.addEventListener('resize', switchAbout)
 window.addEventListener('resize', switchProject)
 window.addEventListener('resize', switchContact)
+
+
+const sections = document.querySelectorAll("section[id]");
+
+function navHighlight() {
+    let scrollY = window.pageYOffset;
+
+    console.log(scrollY);
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 500;
+        let sectionId = current.getAttribute('id');
+
+        if(scrollY <= 60) {
+            document.querySelector("li a[href*=" + "home" + "]").classList.add('active')
+        }
+        
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector("li a[href*=" +sectionId +"]").classList.add('active');
+        } else {
+            document.querySelector("li a[href*=" +sectionId +"]").classList.remove('active');
+        }
+    })
+}
+
+window.addEventListener('scroll', navHighlight)
