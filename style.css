@@ -10,7 +10,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: poppins;
+    font-family: poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -26,6 +26,13 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+.active {
+    background-color: #4ba0e6;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all .5s cubic-bezier(0.70, -0.55, 0.20, 1.60);
 }
 
 .nav-bar {
@@ -46,17 +53,23 @@ a {
 
 .nav-bar ol {
     display: flex;
-    gap: 2.5rem;
-    margin: 1rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
     pointer-events: all;
+}
+
+.nav-bar ol li:focus-visible {
+    background-color: #228fc2;
 }
 
 .nav-bar ol li {
     opacity: 0;
     transition: all .5s ease-in-out;
     color: white;
+    list-style: none;
 }
 
 @media screen and (max-width: 500px) {
@@ -266,6 +279,7 @@ a {
     border-radius: 20px;
     border: 1px solid #fefefe;
     background-image: linear-gradient(to right, rgb(94, 38, 141), rgb(206, 153, 55));
+    transition: all .5s ease-in;
 }
 
 .about-me {
@@ -365,6 +379,7 @@ a {
     border-radius: 20px;
     margin-top: 60px;
     gap: 10px;
+    transition: all .5s ease-in;
 }
 
 .title {
@@ -420,6 +435,45 @@ a {
     flex-wrap: wrap;
     padding: 30px;
     gap: 140px;
+}
+
+.project-card {
+    border: 2px solid #fefefe;
+    width: 610px;
+    height: 490px;
+    transform: skewY(10deg) rotateY(20deg);
+    transition: all .5s ease-in;
+    box-shadow: 15px -10px 40px rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.project-card a {
+    position: absolute;
+    z-index: 99;
+    left: 20px;
+    top: 13px;
+}
+
+.project-card a img {
+    width: 40px;
+    height: auto;
+}
+
+.project-card:hover {
+    transform: skewY(0deg) rotateY(0deg);
+}
+
+.project-card:hover:nth-child(1) {
+    box-shadow: 0 0 40px rgb(112, 31, 218);
+}
+
+.project-card:nth-child(1) {
+    background-image: url(Images/Previews/myWeatherPreview.gif);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .checkbox {
@@ -493,15 +547,16 @@ a {
 }
 
 .wrapper {
-    margin-top: 20px;
+    position: absolute;
+    left: 0;
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
 }
 
 .tech-container {
     display: flex;
-    justify-content: start;
     flex-direction: column;
     align-items: center;
 }
@@ -511,50 +566,16 @@ a {
     height: auto;
 }
 
-.project-card {
-    border: 2px solid #fefefe;
-    width: 610px;
-    height: 490px;
-    transform: skewY(10deg) rotateY(20deg);
-    transition: all .5s ease-in;
-    box-shadow: 15px -10px 40px rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    position: relative;
-    padding: 20px;
-}
-
-.project-card a {
-    position: absolute;
-    z-index: 99;
-    left: 20px;
-    top: 13px;
-}
-
-.project-card a img {
-    width: 40px;
-    height: auto;
-}
-
-.project-card:hover {
-    transform: skewY(0deg) rotateY(0deg);
-}
-
-.project-card:hover:nth-child(1) {
-    box-shadow: 0 0 40px rgb(112, 31, 218);
-}
-
-.project-card:nth-child(1) {
-    background-image: url(Images/Previews/myWeatherPreview.gif);
-    background-size: fill;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 .project-card:nth-child(2) {
     background-image: url(Images/Previews/battleshipPreview.gif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.project-card:hover:nth-child(2) {
+    box-shadow: -5px 0 40px rgba(0, 247, 255, 0.8), 10px 10px 30px 5px #ffa807;
 }
 
 .description-container-2 {
@@ -581,9 +602,41 @@ a {
     border-bottom: 2px solid #fefefe;
 }
 
-.project-card:hover:nth-child(2) {
-    box-shadow: -5px 0 40px rgba(0, 247, 255, 0.8), 10px 10px 30px 5px #ffa807;
+.project-card:nth-child(3) {
+    background-image: url(Images/Previews/restaurantPreview.gif);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+.project-card:hover:nth-child(3) {
+    box-shadow: -5px 0 40px rgba(86, 95, 95, 0.8), 10px 10px 30px 5px #da6a0f;
+}
+
+.description-container-3 {
+    background-color: #0f0d0d;
+    opacity: 0;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    height: 424px;
+    position: absolute;
+    left: 0;
+    top: 63px;
+    transform: translateY(-50%);
+    transition: transform .3s ease-in;
+    padding: 20px;
+}
+
+.description-3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.description-3 h1 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fefefe;
+}
+
 
 @keyframes transform {
     0% { transform: translateX(0); }
@@ -613,14 +666,16 @@ a {
         width: 100px;
         height: auto;
     }
-
-    .scroll {
-        overflow: scroll;
-    }
     
     @keyframes transform {
         0% { transform: translateX(0); }
         100% { transform: translateX(calc(9 * 110px * -1)); }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .scroll {
+        overflow: scroll;
     }
 }
 
@@ -634,3 +689,19 @@ a {
     opacity: .8;
 }
 
+.project-card input[type="checkbox"]:checked ~.description-container-3 {
+    transform: translateY(0);
+    opacity: .8;
+}
+
+.project-card input[type="checkbox"]:checked ~ .burger-lines .line1 {
+    transform: rotate(35deg);
+}
+
+.project-card input[type="checkbox"]:checked ~ .burger-lines .line2 {
+    transform: rotate(-40deg);
+}
+
+.project-card input[type="checkbox"]:checked ~ .burger-lines .line3 {
+    transform: scale(0);
+}
