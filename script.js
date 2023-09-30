@@ -52,7 +52,7 @@ function randomStar() {
 
 randomStar()
 
-function switchHome(screenSize) {
+function switchHome() {
     const list = document.querySelectorAll('li a');
     if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
@@ -70,7 +70,7 @@ function switchHome(screenSize) {
     }
 }
 
-function switchAbout(screenSize) {
+function switchAbout() {
     const list = document.querySelectorAll('li a');
     if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
@@ -88,7 +88,7 @@ function switchAbout(screenSize) {
     }
 }
 
-function switchProject(screenSize) {
+function switchProject() {
     const list = document.querySelectorAll('li a');
     if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
@@ -106,7 +106,7 @@ function switchProject(screenSize) {
     }
 }
 
-function switchContact(screenSize) {
+function switchContact() {
     const list = document.querySelectorAll('li a');
     if(window.innerWidth <= 500) {
         const homeImg = document.createElement('img');
@@ -143,8 +143,9 @@ function navHighlight() {
         const sectionTop = current.offsetTop - 500;
         let sectionId = current.getAttribute('id');
 
-        if(scrollY <= 60) {
-            document.querySelector("li a[href*=" + "home" + "]").classList.add('active')
+        
+        if(scrollY <= 188) {
+            document.querySelector("li a[href*=" + "home" + "]").classList.add('active');
         }
         
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -152,7 +153,13 @@ function navHighlight() {
         } else {
             document.querySelector("li a[href*=" +sectionId +"]").classList.remove('active');
         }
+
+        if(window.innerWidth >= 1440 && scrollY >= 2535) {
+            document.querySelector("li a[href*=" + "contact" + "]").classList.add('active');
+        }
     })
 }
 
 window.addEventListener('scroll', navHighlight)
+
+console.log(sections);
