@@ -46,19 +46,20 @@ a {
     position: fixed;
     z-index: 999;
     font-size: 24px;
-    margin: 10px;
+    margin-top: 30px;
     pointer-events: none;
     font-weight: 700;
 }
 
 .nav-bar ol {
+    position: fixed;
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
-    margin-right: 1.5rem;
     transition-duration: .5s;
     transition-timing-function: ease-in-out;
     pointer-events: all;
+    margin-right: 20px;
 }
 
 .nav-bar ol li:focus-visible {
@@ -83,6 +84,7 @@ a {
         bottom: 0;
         display: flex;
         gap: 2rem;
+        margin-right: 0;
     }
 
     .nav-bar ol li {
@@ -264,6 +266,7 @@ a {
     margin-top: 690px;
     padding: 50px;
     border-radius: 20px;
+    margin-bottom: 100px;
 }
 
 .container {
@@ -380,6 +383,7 @@ a {
     margin-top: 60px;
     gap: 10px;
     transition: all .5s ease-in;
+    overflow: hidden;
 }
 
 .title {
@@ -393,6 +397,7 @@ a {
 }
 
 .title h1 {
+    text-overflow: ellipsis;
     animation: 2s fadeUp;
 }
 
@@ -669,6 +674,82 @@ a {
 .description-4 h1 {
     margin-bottom: 20px;
     border-bottom: 2px solid #fefefe;
+}
+
+.project-text {
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    margin-top: 80px; 
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contacts {
+    background-color: rgba(117, 117, 115, 0.897);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 10px black;
+    border: 1px solid #fefefe;
+}
+
+.email {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email img {
+    width: 120px;
+    filter: invert(100%);
+}
+
+.twitter {
+    width: 140px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.twitter img {
+    width: 70px;
+    filter: invert(100%);
+}
+
+.github {
+    width: 140px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.github img {
+    width: 80px;
 }
 
 @keyframes transform {
