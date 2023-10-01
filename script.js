@@ -136,8 +136,6 @@ const sections = document.querySelectorAll("section[id]");
 function navHighlight() {
     let scrollY = window.pageYOffset;
 
-    console.log(scrollY);
-
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 500;
@@ -162,4 +160,19 @@ function navHighlight() {
 
 window.addEventListener('scroll', navHighlight)
 
-console.log(sections);
+
+const observer = new IntersectionObserver(elements => {
+    elements.forEach((element, i) => {
+        setTimeout(() => {
+            if(element.isIntersecting) {
+                element.target.classList.add('animateUp');
+            } else {
+                element.target.classList.remove('animateUp');
+            }
+        }, 300 * (i + 1));
+    })
+})
+
+observer.observe(document.querySelector(".email"));
+observer.observe(document.querySelector(".twitter"));
+observer.observe(document.querySelector(".github"));
