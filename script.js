@@ -124,12 +124,19 @@ function switchContact() {
     }
 }
 
-
 window.addEventListener('resize', switchHome)
 window.addEventListener('resize', switchAbout)
 window.addEventListener('resize', switchProject)
 window.addEventListener('resize', switchContact)
 
+window.addEventListener('load', () => {
+    if(window.innerWidth <= 500) {
+        switchHome();
+        switchAbout();
+        switchContact();
+        switchProject();
+    }
+})
 
 const sections = document.querySelectorAll("section[id]");
 
@@ -140,7 +147,7 @@ function navHighlight() {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 500;
         let sectionId = current.getAttribute('id');
-
+        console.log(scrollY);
         
         if(scrollY <= 188) {
             document.querySelector("li a[href*=" + "home" + "]").classList.add('active');
@@ -152,7 +159,7 @@ function navHighlight() {
             document.querySelector("li a[href*=" +sectionId +"]").classList.remove('active');
         }
 
-        if(window.innerWidth >= 1440 && scrollY >= 2535) {
+        if(window.innerWidth >= 1440 && scrollY >= 2535 || window.innerWidth < 500 && scrollY > 3805) {
             document.querySelector("li a[href*=" + "contact" + "]").classList.add('active');
         }
     })
