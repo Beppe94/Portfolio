@@ -139,7 +139,7 @@ window.addEventListener('load', () => {
 })
 
 const sections = document.querySelectorAll("section[id]");
-
+console.log(sections);
 function navHighlight() {
     let scrollY = window.pageYOffset;
 
@@ -159,7 +159,10 @@ function navHighlight() {
             document.querySelector("li a[href*=" +sectionId +"]").classList.remove('active');
         }
 
-        if(window.innerWidth >= 1440 && scrollY >= 2535 || window.innerWidth < 500 && scrollY > 3805) {
+        if(window.innerWidth >= 1440 && scrollY >= 2535 || window.innerWidth < 500 && scrollY > 3805
+            || window.innerWidth <= 1024 && scrollY >= 3450) {
+            document.querySelector("li a[href*=" + "project" +"]").classList.remove('active');
+
             document.querySelector("li a[href*=" + "contact" + "]").classList.add('active');
         }
     })
